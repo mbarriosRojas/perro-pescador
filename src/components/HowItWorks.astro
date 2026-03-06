@@ -1,0 +1,128 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Regístrate",
+    description: "Crea tu cuenta en minutos con tus datos básicos y completa tu perfil médico."
+  },
+  {
+    number: "2",
+    title: "Elige tu Especialista",
+    description: "Selecciona el especialista que necesitas según tu consulta o síntomas."
+  },
+  {
+    number: "3",
+    title: "Agenda tu Cita",
+    description: "Reserva el horario que mejor se ajuste a tu disponibilidad."
+  },
+  {
+    number: "4",
+    title: "Consulta Virtual",
+    description: "Conéctate desde cualquier dispositivo por videollamada segura."
+  }
+];
+---
+
+<section id="como-funciona" class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>¿Cómo Funciona?</h2>
+      <p>Cuatro simples pasos para tu consulta médica</p>
+    </div>
+    <div class="steps-container">
+      {steps.map((step, index) => (
+        <article class="step">
+          <div class="step-number">{step.number}</div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+          {index < steps.length - 1 && (
+            <div class="step-connector">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 10L25 20L15 30" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    background-color: var(--color-bg);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    font-size: 1.25rem;
+  }
+
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    position: relative;
+  }
+
+  .step {
+    position: relative;
+    text-align: center;
+  }
+
+  .step-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .step-content h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+
+  .step-content p {
+    color: var(--color-text-light);
+  }
+
+  .step-connector {
+    display: none;
+  }
+
+  @media (min-width: 769px) {
+    .step-connector {
+      display: block;
+      position: absolute;
+      top: 35px;
+      right: -30px;
+      color: var(--color-primary);
+      opacity: 0.3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .steps-container {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+  }
+</style>

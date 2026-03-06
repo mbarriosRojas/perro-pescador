@@ -1,0 +1,196 @@
+---
+---
+
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Agenda tu Consulta</h2>
+        <p class="contact-subtitle">
+          Completa el formulario y nos pondremos en contacto contigo para confirmar tu cita.
+        </p>
+        <div class="contact-details">
+          <div class="detail-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <strong>Email</strong>
+              <span>contacto@medicoonline.com</span>
+            </div>
+          </div>
+          <div class="detail-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <strong>Teléfono</strong>
+              <span>+1 (555) 123-4567</span>
+            </div>
+          </div>
+          <div class="detail-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <strong>Horario</strong>
+              <span>24/7 - Siempre disponible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Nombre Completo</label>
+          <input type="text" id="name" name="name" required placeholder="Juan Pérez" />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="juan@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890" />
+        </div>
+        <div class="form-group">
+          <label for="specialty">Especialidad</label>
+          <select id="specialty" name="specialty" required>
+            <option value="">Selecciona una especialidad</option>
+            <option value="general">Medicina General</option>
+            <option value="pediatria">Pediatría</option>
+            <option value="cardiologia">Cardiología</option>
+            <option value="dermatologia">Dermatología</option>
+            <option value="psicologia">Psicología</option>
+            <option value="nutricion">Nutrición</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Motivo de Consulta</label>
+          <textarea id="message" name="message" rows="4" placeholder="Describe brevemente el motivo de tu consulta..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    color: white;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .detail-item {
+    display: flex;
+    align-items: start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+  }
+
+  .detail-item svg {
+    color: white;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+
+  .detail-item div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-item strong {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .detail-item span {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .contact-form {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const form = document.querySelector('.contact-form');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.');
+    form.reset();
+  });
+</script>

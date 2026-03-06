@@ -1,0 +1,113 @@
+---
+const services = [
+  {
+    icon: "💊",
+    title: "Consulta General",
+    description: "Atención médica general para diagnóstico y tratamiento de enfermedades comunes."
+  },
+  {
+    icon: "🔬",
+    title: "Especialistas",
+    description: "Acceso a más de 20 especialidades médicas disponibles en línea."
+  },
+  {
+    icon: "📋",
+    title: "Recetas Digitales",
+    description: "Recibe tus recetas médicas de forma digital y segura."
+  },
+  {
+    icon: "🩺",
+    title: "Seguimiento Médico",
+    description: "Monitoreo continuo de tu estado de salud con historial digital."
+  },
+  {
+    icon: "📱",
+    title: "Atención Inmediata",
+    description: "Consultas urgentes disponibles sin necesidad de cita previa."
+  },
+  {
+    icon: "🏥",
+    title: "Órdenes de Exámenes",
+    description: "Solicita órdenes de laboratorio y exámenes médicos en línea."
+  }
+];
+---
+
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Nuestros Servicios</h2>
+      <p>Atención médica integral al alcance de un clic</p>
+    </div>
+    <div class="services-grid">
+      {services.map(service => (
+        <article class="service-card">
+          <div class="service-icon">{service.icon}</div>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background-color: var(--color-bg);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    font-size: 1.25rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .service-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .service-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+
+  .service-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

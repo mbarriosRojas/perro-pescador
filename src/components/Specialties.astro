@@ -1,0 +1,92 @@
+---
+const specialties = [
+  "Medicina General",
+  "Pediatría",
+  "Cardiología",
+  "Dermatología",
+  "Psicología",
+  "Nutrición",
+  "Ginecología",
+  "Traumatología",
+  "Oftalmología",
+  "Neurología",
+  "Endocrinología",
+  "Psiquiatría"
+];
+---
+
+<section id="especialidades" class="specialties">
+  <div class="container">
+    <div class="section-header">
+      <h2>Especialidades Médicas</h2>
+      <p>Conectamos con los mejores especialistas</p>
+    </div>
+    <div class="specialties-grid">
+      {specialties.map(specialty => (
+        <div class="specialty-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>{specialty}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .specialties {
+    background-color: var(--color-bg-section);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    font-size: 1.25rem;
+  }
+
+  .specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .specialty-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .specialty-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .specialty-item svg {
+    color: var(--color-secondary);
+    flex-shrink: 0;
+  }
+
+  .specialty-item span {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .specialties-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

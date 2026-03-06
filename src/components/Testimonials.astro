@@ -1,0 +1,149 @@
+---
+const testimonials = [
+  {
+    name: "María González",
+    role: "Paciente",
+    text: "Excelente servicio. Pude consultar con un especialista desde casa y recibir mi tratamiento el mismo día. Muy recomendable.",
+    rating: 5
+  },
+  {
+    name: "Carlos Rodríguez",
+    role: "Paciente",
+    text: "La plataforma es muy fácil de usar y los médicos son muy profesionales. Me ahorro tiempo y dinero en desplazamientos.",
+    rating: 5
+  },
+  {
+    name: "Ana Martínez",
+    role: "Paciente",
+    text: "Atención rápida y eficiente. El seguimiento médico es excelente y puedo acceder a mi historial en cualquier momento.",
+    rating: 5
+  }
+];
+---
+
+<section id="testimonios" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>Lo que Dicen Nuestros Pacientes</h2>
+      <p>Miles de personas confían en nosotros</p>
+    </div>
+    <div class="testimonials-grid">
+      {testimonials.map(testimonial => (
+        <article class="testimonial-card">
+          <div class="stars">
+            {Array.from({ length: testimonial.rating }, (_, i) => (
+              <span class="star">★</span>
+            ))}
+          </div>
+          <p class="testimonial-text">"{testimonial.text}"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              {testimonial.name.charAt(0)}
+            </div>
+            <div class="author-info">
+              <strong>{testimonial.name}</strong>
+              <span>{testimonial.role}</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background-color: var(--color-bg-section);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    font-size: 1.25rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stars {
+    color: #ffd700;
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .star {
+    display: inline-block;
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--color-bg-light);
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-info strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .author-info span {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
