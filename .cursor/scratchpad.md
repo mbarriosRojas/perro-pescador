@@ -26,6 +26,13 @@
 - SEO optimizado con meta tags
 - Favicon personalizado
 
-### Próximos Pasos
-- Build del proyecto para generar archivos en `/docs`
-- Commit y push a la rama principal
+### Completado
+- ✅ Build del proyecto generado en `/docs`
+- ✅ Commit y push a la rama main
+- ✅ Listo para configurar GitHub Pages
+
+### Instrucciones para GitHub Pages
+1. Ir a Settings > Pages en el repositorio
+2. Seleccionar "Deploy from a branch"
+3. Elegir rama `main` y carpeta `/docs`
+4. El sitio estará disponible en: https://mbarriosRojas.github.io/perro-pescador/
